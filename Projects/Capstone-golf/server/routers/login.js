@@ -7,6 +7,9 @@ var knex = require('../knex');
 router.get("/", function(req, res) {
     res.render('../views/login');
 });
+router.get('/logout', function(req,res){
+    res.render('../views/logout');
+});
 
 router.post('/login', function(req, res) {
     var body = req.body;
@@ -20,15 +23,21 @@ router.post('/login', function(req, res) {
                 res.send("not a member");
             }
             if (!req.cookies.id) {
+                console.log("just gave you a cookie");
                 res.cookie('id', data[0].id, {
                     httpOnly: true
                 });
             }else{
                 console.log("you have a cookie");
             }
-            console.log(req.cookies);
-            res.send(data);
+            res.render('../views/logout')
         });
+});
+
+router.post('/logout', function(req, res){
+    res.clearCookie('id');
+    res.send("cleared your cookie");
+    console.log("cleared your cookie");
 });
 
 module.exports = router;
