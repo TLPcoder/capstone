@@ -29,6 +29,18 @@ exports.seed = function(knex, Promise) {
             auction_id:3,
             bid_amount: 120
         }),
+        knex('bids').insert({
+            id: 5,
+            bider_id: 1,
+            auction_id:2,
+            bid_amount:95
+        }),
+        knex('bids').insert({
+            id: 6,
+            bider_id: 3,
+            auction_id:2,
+            bid_amount:80
+        }),
       ]);
     });
 };
