@@ -4,8 +4,8 @@ exports.up = function(knex, Promise) {
         table.increments('id').primary();
         table.integer('bider_id').unsigned().notNullable();
         table.foreign('bider_id').references('id').inTable('users').onDelete('cascade');
-        table.integer('auctioner_id').unsigned().notNullable();
-        table.foreign('auctioner_id').references('id').inTable('users').onDelete('cascade');
+        table.integer('auction_id').unsigned().notNullable();
+        table.foreign('auction_id').references('id').inTable('auction').onDelete('cascade');
         table.integer('bid_amount').notNullable();
     });
 };
