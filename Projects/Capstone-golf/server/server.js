@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const login = require('./routers/login');
 const auction = require('./routers/auction');
+const tee_time = require('./routers/tee_time')
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({
@@ -19,6 +20,7 @@ app.get("/", function(req,res){
 
 app.use('/login', login);
 app.use('/auction', auction);
+app.use('/tee_time', tee_time);
 
 
 app.listen(PORT, function(){

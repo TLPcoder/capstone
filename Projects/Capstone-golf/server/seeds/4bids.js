@@ -33,7 +33,7 @@ exports.seed = function(knex, Promise) {
             id: 5,
             bider_id: 1,
             auction_id:2,
-            bid_amount:95
+            bid_amount:100
         }),
         knex('bids').insert({
             id: 6,
