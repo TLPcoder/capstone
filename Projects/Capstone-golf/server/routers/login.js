@@ -1,8 +1,8 @@
 "use strict";
 const express = require('express');
 const router = express.Router();
-var knex = require('../knex');
-var bcrypt = require('bcrypt');
+const knex = require('../knex');
+const bcrypt = require('bcrypt');
 const User = require('../models/users');
 
 
@@ -44,10 +44,10 @@ router.post('/createAccount', function(req, res) {
     // res.json(body);
 });
 
-router.get('/cookie',function(req,res){
+router.get('/cookie', function(req, res) {
     res.json({
-        member:true,
-        id:req.cookies.id
+        member: true,
+        id: req.cookies.id
     });
 });
 
@@ -128,7 +128,9 @@ router.post('/login', function(req, res) {
 
 router.post('/logout', function(req, res) {
     res.clearCookie('id');
-    res.send("cleared your cookie");
+    res.json({
+        cookie: "deleted"
+    });
     console.log("cleared your cookie");
 });
 
