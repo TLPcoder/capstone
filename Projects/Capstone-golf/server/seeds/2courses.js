@@ -29,7 +29,7 @@ exports.seed = function(knex, Promise) {
         }),
         knex('courses').insert({
             id: 3,
-            name: 'Green Hills Country Club',
+            name: 'Cypress Point',
             description:"Amongst the world of golf, few courses are as revered as Cypress Point. Cypress Point Golf Course was created by the well renown designer Alister Mackenzie and opened in 1928. Extraordinary and timeless, Alister Mackenzie masterpiece is consistently rated as one of the top 3 golf courses ever created by all major publications. Cypress Point offers natural beauty that is unmatched anywhere. The clandestine approach to Mackenzie's achievement is the reality that he did not over power the natural terrain, allowing the course to take shape organically.",
             image:'http://www.montereypeninsulagolf.com/images/course/cypress_point/cypress_point_golf_club_peninsula.jpg',
             address:'3150 17 Mile Dr',
