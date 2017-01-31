@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const login = require('./routers/login');
 const auction = require('./routers/auction');
-const tee_time = require('./routers/tee_time')
+const tee_time = require('./routers/tee_time');
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({
